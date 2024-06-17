@@ -5,12 +5,13 @@ import SignIn from "./pages/sign-in";
 import ForgotPassword from "./pages/forgot-password";
 import ResetPaddword from "./pages/reset-password";
 import { createBrowserRouter } from "react-router-dom";
+import ErrorPage from "./error-page";
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-
       element: <Root />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/sign-up",
