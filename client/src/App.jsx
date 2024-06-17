@@ -1,11 +1,12 @@
-import "./App.css";
-
-function App() {
+import Root from "./pages/root";
+const App = () => {
   return (
     <>
-      <div>hello,world</div>
+      <div>
+        <Root />
+      </div>
     </>
   );
-}
+};
 
 export default App;
