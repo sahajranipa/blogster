@@ -5,21 +5,35 @@ import Button from "../components/ui/Button";
 const Root = () => {
   return (
     <>
-      <header className="w-full h-30 p-6 border border-bottom-gray-600">
-        <nav className="flex space-x-4 justify-around">
-          <h2 className="justify-start text-2xl font-bold">
-            <Link to="/">Blogster</Link>
-          </h2>
-
-          <div className="flex justify-end space-x-10">
-            <Button variant="outine">
-              <Link to="/sign-in">Sign-In</Link>
+      <header className="w-full border border-bottom-gray-600 rounded-full">
+        <div className="flex justify-between items-center py-3 px-3">
+          <div>
+            <Link to="/">
+              <h2 className="text-3xl font-headingFont font-bold">Blogster.</h2>
+            </Link>
+          </div>
+          <div>
+            <Button
+              className="text-black bg-white hover:bg-black  hover:text-white  
+              focus:outline-none border border-black
+               font-headingFont 
+               font-medium  rounded-lg text-sm px-5 
+              py-2.5 text-center inline-flex items-center me-2 mb-2"
+              size="lg">
+              <Link to="/sign-in">Sign In</Link>
             </Button>
-            <Button>
-              <Link to="/sign-up">Sign-Up</Link>
+            <Button
+              className="text-black bg-white hover:bg-black 
+               hover:text-white 
+              focus:outline-none border border-black
+               font-headingFont 
+               font-medium rounded-lg text-sm 
+              px-5 py-2.5 text-center inline-flex items-center me-2 mb-2"
+              size="lg">
+              <Link to="/sign-up">Sign Up</Link>
             </Button>
           </div>
-        </nav>
+        </div>
       </header>
       <div id="detail" className="my-5">
         <Outlet />
