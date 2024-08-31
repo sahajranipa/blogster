@@ -5,8 +5,8 @@ import Button from "./ui/Button";
 const ResetPassword = () => {
   return (
     <form
-      className="mx-auto max-w-xl space-y-6 border
-     border-gray-300 p-8 rounded-md ">
+      className="mt-3 mx-auto max-w-xl space-y-6 border
+     border-gray-300 p-8 rounded-md shadow-lg">
       <p className="text-3xl text-center font-bold my-1 font-headingFont">
         Reset Your Password
       </p>

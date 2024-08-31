@@ -14,17 +14,22 @@ import SignIn from "./components/SignIn";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import Profile from "./components/Profile";
+import PostList from "./components/PostList";
+import PostDetail from "./components/PostDetail";
 import "./index.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
       <Route path="" element={<Home />} />
-      <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/sign-in" element={<SignIn />} />
-      <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/resetpassword" element={<ResetPassword />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="sign-up" element={<SignUp />} />
+      <Route path="sign-in" element={<SignIn />} />
+      <Route path="forgotpassword" element={<ForgotPassword />} />
+      <Route path="resetpassword" element={<ResetPassword />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="posts" element={<PostList />}>
+        <Route path="posts/:id" element={<PostDetail />} />
+      </Route>
     </Route>
   )
 );

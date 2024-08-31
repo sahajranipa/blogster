@@ -5,8 +5,8 @@ import Input from "./ui/Input";
 const SignUp = () => {
   return (
     <form
-      className="mx-auto h-screen max-w-xl space-y-6 border
-     border-gray-300 p-8 rounded-md ">
+      className="mx-auto mt-3 h-screen max-w-xl space-y-6 border
+     border-gray-300 p-8 rounded-md shadow-lg">
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign Up</h1>
         <p className="text-gray-500 text-xl text-center font-headingFont">
@@ -24,7 +24,7 @@ const SignUp = () => {
         />
       </div>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="fullName">Email</label>
+        <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           name="email"
@@ -34,7 +34,7 @@ const SignUp = () => {
         />
       </div>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="fullName">Password</label>
+        <label htmlFor="password">Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           name="password"
@@ -43,7 +43,7 @@ const SignUp = () => {
         />
       </div>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="Password">Confirm Password</label>
+        <label htmlFor="confirmPassword">Confirm Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           name="confirmPassword"

@@ -5,8 +5,8 @@ import Button from "./ui/Button";
 const ForgotPassword = () => {
   return (
     <form
-      className="mx-auto max-w-xl space-y-6 border
-     border-gray-300 p-8 rounded-md">
+      className="mt-3 mx-auto max-w-xl space-y-6 border
+     border-gray-300 p-8 rounded-md shadow-sm">
       <div className="text-center">
         <p className="text-gray-500 text-xl text-center font-headingFont">
           Please Enter Your Email
