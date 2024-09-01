@@ -1,7 +1,11 @@
 import React from "react";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div className="mb-0 p-7 mx-auto w-full rounded-t-lg bg-black text-white">
+      Footer
+    </div>
+  );
 };
 
 export default Footer;

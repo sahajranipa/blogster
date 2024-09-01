@@ -4,7 +4,9 @@ import Button from "../components/ui/Button";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 mt-2 mx-auto bg-white  w-[90%] px-4 py-2 rounded-full drop-shadow-xl">
+    <header
+      className="sticky top-0 left-0 w-full z-50 mt-2 mx-auto bg-gray-300  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10
+ px-4 py-2 rounded-full shadow-xl">
       <div className="flex justify-between items-center py-3 px-3">
         <div>
           <Link to="/">

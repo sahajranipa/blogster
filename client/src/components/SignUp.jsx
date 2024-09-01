@@ -5,7 +5,7 @@ import Input from "./ui/Input";
 const SignUp = () => {
   return (
     <form
-      className="mx-auto mt-3 h-screen max-w-xl space-y-6 border
+      className="mx-auto mt-3 mb-3 h-screen max-w-xl space-y-6 border
      border-gray-300 p-8 rounded-md shadow-lg">
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign Up</h1>

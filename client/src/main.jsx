@@ -27,9 +27,8 @@ const router = createBrowserRouter(
       <Route path="forgotpassword" element={<ForgotPassword />} />
       <Route path="resetpassword" element={<ResetPassword />} />
       <Route path="profile" element={<Profile />} />
-      <Route path="posts" element={<PostList />}>
-        <Route path="posts/:id" element={<PostDetail />} />
-      </Route>
+      <Route path="posts" element={<PostList />} />
+      <Route path="posts/:id" element={<PostDetail />} />
     </Route>
   )
 );

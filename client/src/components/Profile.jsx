@@ -7,7 +7,7 @@ import Button from "./ui/Button";
 const Profile = () => {
   return (
     <form
-      className="mt-3 mx-auto max-w-xl space-y-6 border
+      className="mt-3 mb-3 h-screen mx-auto max-w-xl space-y-6 border
  border-gray-300 p-8 rounded-md shadow-lg">
       <ProfilePic
         name="Sahaj Ranipa"
