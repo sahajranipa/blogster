@@ -25,7 +25,7 @@ const Home = () => {
             Welcome to Blogster! Your Hub for Fresh, Engaging, and Insightful
             Content
           </h2>
-          <p className="font-bodyFont text-balance">
+          <p className="font-bodyFont text-pretty">
             {" "}
             At Blogster, we believe that every story deserves to be told and
             every voice deserves to be heard. Our platform is designed for
@@ -38,7 +38,7 @@ const Home = () => {
           <h2 className="font-headingFont text-pretty text-xl font-bold">
             Discover a World of Topics
           </h2>
-          <p className="font-bodyFont text-balance">
+          <p className="font-bodyFont text-pretty">
             {" "}
             From the latest in technology, health, lifestyle, and personal
             development to creative writing, travel diaries, and
@@ -52,7 +52,7 @@ const Home = () => {
           <h2 className="font-headingFont text-pretty text-xl font-bold">
             Write, Share, and Inspire
           </h2>
-          <p className="font-bodyFont text-balance">
+          <p className="font-bodyFont text-pretty">
             {" "}
             Are you a writer looking to share your thoughts with the world? Join
             our community of bloggers and start publishing today! Blogster
@@ -67,7 +67,7 @@ const Home = () => {
             <h2 className="font-headingFont  text-xl font-bold">
               Join Our Community
             </h2>
-            <p className="font-bodyFont">
+            <p className="font-bodyFont text-pretty">
               {" "}
               At Blogster, we value engagement and community. Connect with
               like-minded readers and writers, leave comments, share your
@@ -80,7 +80,7 @@ const Home = () => {
             <h2 className="font-headingFont text-xl font-bold">
               Start Your Blogging Journey with Blogster!
             </h2>
-            <p className="font-bodyFont">
+            <p className="font-bodyFont text-pretty">
               {" "}
               Whether you're a seasoned blogger or just starting, Blogster is
               here to help you grow. Explore, write, share, and connect because
@@ -91,7 +91,7 @@ const Home = () => {
             <h2 className="font-headingFont  text-xl font-bold">
               Stay Updated
             </h2>
-            <p className="font-bodyFont">
+            <p className="font-bodyFont text-pretty">
               {" "}
               Never miss out on fresh content! Subscribe to our newsletter and
               get the latest blogs delivered straight to your inbox. Follow us
