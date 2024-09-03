@@ -7,7 +7,7 @@ import Input from "./ui/Input";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <main className="mt-[7%] mb-3">
+    <main className="mt-[7%] mb-3 min-h-screen">
       <div className="font-headingFont text-center">
         <h1 className="font-bold text-center text-9xl">Blogster.</h1>
         <p className=" text-3xl text-balance leading-[3rem] mt-8 w-3/4 mx-auto">

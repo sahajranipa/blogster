@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
     <form
-      className="mx-auto mt-3 mb-3 h-screen max-w-xl space-y-6 border
+      className="mx-auto mt-3 mb-3 max-w-xl space-y-6 border
      border-gray-300 p-8 rounded-md shadow-lg">
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign Up</h1>
@@ -62,6 +63,12 @@ const SignUp = () => {
           className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
           Sign Up
         </Button>
+      </div>
+      <div className="text-center text-gray-500 font-headingFont">
+        Already have an account?{" "}
+        <Link className="text-black font-medium" to="/sign-in">
+          Sign In
+        </Link>
       </div>
     </form>
   );

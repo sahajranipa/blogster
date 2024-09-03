@@ -4,8 +4,20 @@ export const content = ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"];
 export const theme = {
   extend: {
     fontFamily: {
-      headingFont: ['"Roboto"', "sans-serif"],
-      bodyFont: ['"Lora"', "serif"],
+      headingFont: [
+        "Mona Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ],
+      bodyFont: [
+        "Mona Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ],
     },
   },
 };

@@ -1,14 +1,29 @@
 import React from "react";
 import Button from "./ui/Button";
 import { NavLink } from "react-router-dom";
+import Image from "./ui/Image";
 
 const PostItem = ({ post }) => {
   const { id, title, body } = post;
   return (
-    <div className="border border-gray-300 mb-3 p-4 rounded-lg w-[65%]">
-      <h1 className="text-2xl font-headingFont font-bold">{title}</h1>
-      <p className="text-md font-bodyFont">{body}</p>
-      <div className="flex justify-end mt-4">
+    <div className="flex flex-col justify-start items-start rounded-xl aspect-square w-full space-y-3">
+      <div>
+        <Image
+          src="https://plus.unsplash.com/premium_photo-1720886073981-f975d3dc93f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D"
+          alt="post image"
+          className="object-cover rounded-xl aspect-square"
+        />
+      </div>
+
+      <div className="flex flex-col justify-start items-start space-y-3">
+        {" "}
+        <span>10 min</span>
+        <h1 className="text-xl text-ellipsis overflow-hidden font-headingFont font-semibold">
+          {title}
+        </h1>
+        <p className="text-sm text-ellipsis overflow-hidden font-bodyFont">
+          {body}
+        </p>
         <Button
           className="text-black bg-white hover:bg-black  hover:text-white  
               focus:outline-none border border-black
