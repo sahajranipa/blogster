@@ -19,6 +19,7 @@ import ResetPassword from "./components/ResetPassword";
 import Profile from "./components/Profile";
 import PostList from "./components/PostList";
 import PostDetail from "./components/PostDetail";
+import CategoryPostList from "./components/CategoryPostList";
 import "./index.css";
 
 const router = createBrowserRouter(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="profile" element={<Profile />} />
       <Route path="posts" element={<PostList />} />
       <Route path="posts/:id" element={<PostDetail />} />
+      <Route path="categories/:category" element={<CategoryPostList />} />
     </Route>
   )
 );

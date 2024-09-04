@@ -21,16 +21,19 @@ const PostDetail = () => {
     <div className="flex flex-col items-center space-y-6 mx-auto h-screen mt-12">
       <div className="flex flex-col justify-center items-center space-y-6">
         <div className="flex justify-between items-center space-x-2">
-          <span clasName="font-bodyFont">Written By :</span>
+          <span clasName="text-xl font-bodyFont">Written By :</span>
           <Image
             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
             className="rounded-full w-10 h-10 object-cover"
             alt="profile pic"
           />
           <span className="font-bold font-bodyFont">John Smith</span>
+          <span className="font-semibold font-bodyFont italic">
+            18 min read
+          </span>
         </div>
         <h1 className="text-[4rem] text-center font-headingFont font-[400]">
-          Best stategy to Acheive Profitable Harvesting
+          Best stategy to Achieve Profitable Harvesting
         </h1>
         <p className="text-center w-full text-md font-bodyFont">{post?.body}</p>
         <Image
@@ -63,7 +66,9 @@ const PostDetail = () => {
         <h2 className="text-3xl text-start font-headingFont font-semibold">
           Related Blogs
         </h2>
-        <div className="grid grid-cols-3 justify-center items-center gap-4 space-y-5">
+        <hr className="h-px my-1 w-full bg-gray-400 border-0 dark:bg-gray-400" />
+        <div className="grid grid-cols-4 justify-center items-center gap-2 space-y-2">
+          <RelatedBlogsContainer />
           <RelatedBlogsContainer />
           <RelatedBlogsContainer />
           <RelatedBlogsContainer />
