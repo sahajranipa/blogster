@@ -1,12 +1,16 @@
-import React from "react";
 import Image from "./ui/Image";
+import DropDown from "./ui/DropDown";
 
 const TopBlogsContainer = () => {
   return (
     <>
-      <h1 className="text-4xl font-headingFont text-start font-semibold">
+      <h1 className="text-4xl font-headingFont flex justify-between text-start font-semibold relative">
         Top Blogs
+        <div classname="relative right-0">
+          <DropDown />
+        </div>
       </h1>
+
       <div className="grid grid-cols-2 col-span-2 justify-center gap-4 w-full mx-auto mt-6 mb-6">
         <div>
           <Image
@@ -15,7 +19,7 @@ const TopBlogsContainer = () => {
             className="rounded-xl object-cover w-[50%]"
           />
           <div>
-            <div className="flex flex-col justify-start space-y-2">
+            <div className="flex flex-col flex-grow justify-start space-y-2">
               <div className="text-sm text-gray-700 mt-4">10 min</div>
               <h2 className="text-2xl font-semibold text-gray-950">
                 Tech Marvels for Your Home

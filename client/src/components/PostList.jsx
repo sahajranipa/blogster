@@ -18,7 +18,7 @@ function PostList() {
     getPosts();
   }, []);
   return (
-    <div className="grid grid-cols-auto gap-6 mt-4 mx-auto w-full">
+    <div className="grid grid-cols-auto gap-6 mt-4 mx-auto">
       <TopBlogsContainer />
       <LatestBlogsContainer posts={posts} />
 
