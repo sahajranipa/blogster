@@ -33,28 +33,28 @@ const DropDown = () => {
           <li>
             <Link
               to="#"
-              className="block px-4 py-2 text-black  hover:bg-black hover:text-white">
+              className="block font-bodyFont px-4 py-2 text-black  hover:bg-black hover:text-white">
               Software Development
             </Link>
           </li>
           <li>
             <Link
               to="#"
-              className="block px-4 py-2 text-black  hover:bg-black hover:text-white">
+              className="block font-bodyFont px-4 py-2 text-black  hover:bg-black hover:text-white">
               Entertaiment
             </Link>
           </li>
           <li>
             <Link
               to="#"
-              className="block px-4 py-2 text-black  hover:bg-black hover:text-white">
+              className="block font-bodyFont px-4 py-2 text-black  hover:bg-black hover:text-white">
               UI/UX designing
             </Link>
           </li>
           <li>
             <Link
               to="#"
-              className="block px-4 py-2 text-black  hover:bg-black hover:text-white">
+              className="block font-bodyFont px-4 py-2 text-black  hover:bg-black hover:text-white">
               Food and Travelling
             </Link>
           </li>

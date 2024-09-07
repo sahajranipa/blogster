@@ -6,7 +6,7 @@ const TopBlogsContainer = () => {
     <>
       <h1 className="text-4xl font-headingFont flex justify-between text-start font-semibold relative">
         Top Blogs
-        <div classname="relative right-0">
+        <div className="relative right-0">
           <DropDown />
         </div>
       </h1>

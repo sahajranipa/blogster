@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
-import { FaPlus } from "react-icons/fa";
 import TopBlogsContainer from "./TopBlogsContainer";
-import PostItem from "./PostItem";
-import Button from "./ui/Button";
 import LatestBlogsContainer from "./LatestBlogsContainer";
+import AddBlogBtn from "./ui/AddBlogBtn";
+import AddBlog from "./AddBlog";
 
 function PostList() {
   const [posts, setPosts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetch(
@@ -18,13 +23,14 @@ function PostList() {
     getPosts();
   }, []);
   return (
-    <div className="grid grid-cols-auto gap-6 mt-4 mx-auto">
-      <TopBlogsContainer />
-      <LatestBlogsContainer posts={posts} />
+    <div className="relative">
+      <div className="grid grid-cols-auto gap-6 mt-4 mx-auto">
+        <TopBlogsContainer />
+        <LatestBlogsContainer posts={posts} />
+        <AddBlog showModal={showModal} toggleModal={toggleModal} />
 
-      <Button className=" bg-black text-white rounded-full p-5 fixed z-50 bottom-10 right-5">
-        <FaPlus className="text-white" size="25" />
-      </Button>
+        {!showModal && <AddBlogBtn onClick={toggleModal} />}
+      </div>
     </div>
   );
 }
