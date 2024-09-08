@@ -1,13 +1,24 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const { handleSubmit } = useForm({
+    defaultValues: {
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+  const onSubmit = (data) => console.log(data);
   return (
     <form
       className="mx-auto mt-3 mb-3 max-w-xl space-y-6 border
-     border-gray-300 p-8 rounded-md shadow-lg">
+     border-gray-300 p-8 rounded-md shadow-lg"
+      onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign Up</h1>
         <p className="text-gray-500 text-xl text-center font-headingFont">
