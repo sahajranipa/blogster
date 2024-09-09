@@ -3,10 +3,14 @@ import Input from "./ui/Input";
 import Button from "./ui/Button";
 
 const ForgotPassword = () => {
+  const { handleSubmit, register } = useForm({
+    defaultValues: { forgot_password: "" },
+  });
   return (
     <form
       className="mt-[7rem] mx-auto my-auto max-w-xl space-y-6 border
-     border-gray-300 p-8 rounded-md shadow-sm">
+     border-gray-300 p-8 rounded-md shadow-sm"
+      onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">
         <p className="text-gray-500 text-xl text-center font-headingFont">
           Please Enter Your Email
@@ -16,6 +20,7 @@ const ForgotPassword = () => {
         <label htmlFor="forgot_password">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("forgot_password")}
           name="forgot_password"
           type="text"
           placeholder="Enter your email"

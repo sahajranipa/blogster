@@ -2,12 +2,21 @@ import React from "react";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const SignIn = () => {
+  const { handleSubmit, register } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+  const onSubmit = (data) => console.log(data);
   return (
     <form
       className="mt-3 mb-3 mx-auto max-w-xl space-y-6 border
- border-gray-300 p-8 rounded-md shadow-lg ">
+ border-gray-300 p-8 rounded-md shadow-lg "
+      onClick={handleSubmit(onSubmit)}>
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign In</h1>
         <p className="text-gray-500 text-xl text-center font-headingFont">
@@ -19,6 +28,7 @@ const SignIn = () => {
         <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("email")}
           name="email"
           type="email"
           placeholder="johndoe@gmail.com"
@@ -29,6 +39,7 @@ const SignIn = () => {
         <label htmlFor="password">Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("password")}
           name="password"
           type="password"
           required

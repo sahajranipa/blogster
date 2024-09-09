@@ -5,7 +5,7 @@ import Input from "./ui/Input";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
-  const { handleSubmit } = useForm({
+  const { handleSubmit, register } = useForm({
     defaultValues: {
       fullName: "",
       email: "",
@@ -29,6 +29,7 @@ const SignUp = () => {
         <label htmlFor="fullName">Full Name</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("fullName")}
           name="fullName"
           type="text"
           placeholder="John Doe"
@@ -39,6 +40,7 @@ const SignUp = () => {
         <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("email")}
           name="email"
           type="email"
           placeholder="johndoe@gmail.com"
@@ -49,6 +51,7 @@ const SignUp = () => {
         <label htmlFor="password">Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("password")}
           name="password"
           type="password"
           required
@@ -58,6 +61,7 @@ const SignUp = () => {
         <label htmlFor="confirmPassword">Confirm Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
+          {...register("confirmPassword")}
           name="confirmPassword"
           type="password"
           required

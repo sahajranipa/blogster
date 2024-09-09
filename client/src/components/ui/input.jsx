@@ -8,10 +8,8 @@ const Input = ({
   type,
   value,
   onChange,
-  register,
   ...rest
 }) => {
-  const { register } = useForm();
   return (
     <input
       name={name}
@@ -20,7 +18,6 @@ const Input = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      {...register(name)}
       {...rest}
     />
   );

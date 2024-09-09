@@ -1,6 +1,3 @@
-import Select, { Option } from "rc-select";
-import "rc-select/assets/index.css";
-
 const SelectMenu = ({ menuItems }) => {
   return (
     <form className="mt-6">
