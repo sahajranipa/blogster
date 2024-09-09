@@ -20,13 +20,9 @@ const DropDown = () => {
 
       <div
         id="dropdownHover"
-        className={`${
-          toggle
-            ? `z-90 mt-4 absolute   bg-white text-black 
-        divide-y font-bodyFont divide-gray-100 rounded-lg shadow-2xl w-52`
-            : `z-90 mt-4 absolute hidden bg-white text-black 
-        divide-y font-bodyFont divide-gray-100 rounded-lg shadow-2xl w-52`
-        }`}>
+        className={`
+        z-90 ${toggle ? "" : "hidden"} mt-4 absolute   bg-white text-black 
+        divide-y font-bodyFont divide-gray-100 rounded-lg shadow-2xl w-52`}>
         <ul
           className="py-2 text-sm text-gray-700 dark:text-gray-200"
           aria-labelledby="dropdownHoverButton">
