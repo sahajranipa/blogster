@@ -1,9 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const ResetPassword = () => {
+  const [togglePassword, setTogglePassword] = useState(false);
+  const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
   const { handleSubmit, register } = useForm({
     defaultValues: {
       password: "",
@@ -22,26 +25,45 @@ const ResetPassword = () => {
       <label className="block mb-2" htmlFor="password">
         Password
       </label>
-      <div className="flex flex-col space-y-2 font-headingFont">
+      <div className="relative font-headingFont">
         <Input
-          className="border p-2 rounded-md border-gray-300"
+          className="relative border p-2 rounded-md border-gray-300 w-full"
           {...register("password")}
           name="password"
-          type="password"
+          type={togglePassword ? "password" : "text"}
           placeholder="Enter your password"
         />
+
+        <div
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5"
+          onClick={() => setTogglePassword((prev) => !prev)}>
+          {togglePassword ? (
+            <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          ) : (
+            <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          )}
+        </div>
       </div>
       <label className="block mb-2" htmlFor="confirm_password">
         Confirm Password
       </label>
-      <div className="flex flex-col space-y-2 font-headingFont">
+      <div className="relative font-headingFont">
         <Input
-          className="border p-2 rounded-md border-gray-300"
+          className="relative border p-2 rounded-md border-gray-300 w-full"
           {...register("confirm_password")}
           name="confirm_password"
-          type="password"
+          type={toggleConfirmPassword ? "password" : "text"}
           placeholder="Enter your confirm password"
         />
+        <div
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5"
+          onClick={() => setToggleConfirmPassword((prev) => !prev)}>
+          {toggleConfirmPassword ? (
+            <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          ) : (
+            <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          )}
+        </div>
       </div>
       <div className="mt-4">
         <Button className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">

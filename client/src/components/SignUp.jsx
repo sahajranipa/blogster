@@ -1,19 +1,28 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { SignUpSchema } from "../schemas/signUpSchema";
 
 const SignUp = () => {
   const [togglePassword, setTogglePassword] = useState(false);
-  const { handleSubmit, register } = useForm({
+  const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+  } = useForm({
     defaultValues: {
       fullName: "",
       email: "",
       password: "",
       confirmPassword: "",
     },
+    resolver: zodResolver(SignUpSchema),
   });
   const onSubmit = (data) => console.log(data);
   return (
@@ -40,6 +49,9 @@ const SignUp = () => {
           required
         />
       </div>
+      {errors?.fullName?.message && (
+        <p className="text-red-700 mb-4">{errors.fullName.message}</p>
+      )}
       <label className="block my-2" htmlFor="email">
         Email
       </label>
@@ -53,6 +65,9 @@ const SignUp = () => {
           required
         />
       </div>
+      {errors?.email?.message && (
+        <p className="text-red-700 mb-4">{errors.email.message}</p>
+      )}
       <label className="block mb-2" htmlFor="password">
         Password
       </label>
@@ -75,6 +90,9 @@ const SignUp = () => {
           )}
         </div>
       </div>
+      {errors?.password?.message && (
+        <p className="text-red-700 mb-4">{errors.password.message}</p>
+      )}
       <label className="block mb-2" htmlFor="confirmPassword">
         Confirm Password
       </label>
@@ -84,19 +102,22 @@ const SignUp = () => {
           {...register("confirmPassword")}
           placeholder={"***********"}
           name="confirmPassword"
-          type={togglePassword ? "password" : "text"}
+          type={toggleConfirmPassword ? "password" : "text"}
           required
         />
         <div
           className="absolute inset-y-0 end-0 flex items-center pe-3.5"
-          onClick={() => setTogglePassword((prev) => !prev)}>
-          {togglePassword ? (
+          onClick={() => setToggleConfirmPassword((prev) => !prev)}>
+          {toggleConfirmPassword ? (
             <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
           ) : (
             <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
           )}
         </div>
       </div>
+      {errors?.confirmPassword?.message && (
+        <p className="text-red-700 mb-4">{errors.confirmPassword.message}</p>
+      )}
       <div className="flex flex-col gap-2">
         <Button
           className="w-full border border-gray-400 font-headingFont font-medium rounded-lg mt-4 py-2"

@@ -77,7 +77,7 @@ const Home = () => {
               welcome to contribute.
             </p>
           </div>
-          <div className="flex flex-col space-y-3 mx-auto mt-10 border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+          <div className="flex flex-col space-y-3 mx-auto border border-gray-300 rounded-xl p-7 shadow-xl text-left">
             <h2 className="font-headingFont text-xl font-bold">
               Start Your Blogging Journey with Blogster!
             </h2>
@@ -88,7 +88,7 @@ const Home = () => {
               every blog is a story worth telling.
             </p>
           </div>
-          <div className="flex flex-col space-y-3  mx-auto mt-5 bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+          <div className="flex flex-col space-y-3  mx-auto  bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
             <h2 className="font-headingFont  text-xl font-bold">
               Stay Updated
             </h2>

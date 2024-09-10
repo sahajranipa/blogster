@@ -1,10 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
+  const [togglePassword, setTogglePassword] = useState(false);
   const { handleSubmit, register } = useForm({
     defaultValues: {
       email: "",
@@ -27,7 +29,7 @@ const SignIn = () => {
       <label className="block mb-2" htmlFor="email">
         Email
       </label>
-      <div className="flex flex-col space-y-2">
+      <div className="relative">
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("email")}
@@ -40,15 +42,24 @@ const SignIn = () => {
       <label className="block mb-2" htmlFor="password">
         Password
       </label>
-      <div className="flex flex-col space-y-2">
+      <div className="relative">
         <Input
-          className="border p-2 rounded-md border-gray-300"
+          className="relative border p-2 rounded-md border-gray-300 w-full"
           {...register("password")}
           placeholder={"***********"}
           name="password"
-          type="password"
+          type={togglePassword ? "password" : "text"}
           required
         />
+        <div
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5"
+          onClick={() => setTogglePassword((prev) => !prev)}>
+          {togglePassword ? (
+            <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          ) : (
+            <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          )}
+        </div>
       </div>
       <span className="mt-3 text-sm font-semibold text-black text-underline font-headingFont">
         <Link to="/forgot-password">Forgot Password?</Link>
