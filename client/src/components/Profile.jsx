@@ -9,9 +9,10 @@ const Profile = () => {
   const { handleSubmit, register } = useForm({
     defaultValues: { email: "", bio: "", web_site_link: "", location: "" },
   });
+  const onSubmit = (data) => console.log(data);
   return (
     <form
-      className="mt-3 mb-3 mx-auto max-w-xl space-y-6 border
+      className="mt-3 mb-3 mx-auto max-w-xl space-y-3 border
  border-gray-300 p-8 rounded-md shadow-lg"
       onSubmit={handleSubmit(onSubmit)}>
       <ProfilePic
@@ -23,8 +24,10 @@ const Profile = () => {
 
       <TextArea name="bio" value="Bio" {...register("bio")} />
 
+      <label className="block mb-2" htmlFor="email">
+        Email
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("email")}
@@ -34,8 +37,10 @@ const Profile = () => {
           required
         />
       </div>
+      <label className="block mb-2" htmlFor="web_site_link">
+        Web-Site Link
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="web_site_link">Web-Site Link</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("web_site_link")}
@@ -45,8 +50,10 @@ const Profile = () => {
           required
         />
       </div>
+      <label className="block mb-2" htmlFor="location">
+        Location
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="location">Location</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("location")}
@@ -56,7 +63,7 @@ const Profile = () => {
           required
         />
       </div>
-      <div className="flex flex-col md:flex-row gap-2">
+      <div className="flex flex-col md:flex-row gap-2 mt-4">
         <Button
           className="w-full border border-gray-400 font-headingFont font-medium rounded-lg py-2"
           variant="outline">
@@ -64,7 +71,7 @@ const Profile = () => {
         </Button>
         <Button
           type="submit"
-          className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
+          className="w-full bg-black text-white font-headingFont font-medium rounded-lg space-y-2">
           Save Profile
         </Button>
       </div>

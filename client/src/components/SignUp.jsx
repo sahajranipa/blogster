@@ -1,10 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
+  const [togglePassword, setTogglePassword] = useState(false);
   const { handleSubmit, register } = useForm({
     defaultValues: {
       fullName: "",
@@ -16,7 +18,7 @@ const SignUp = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <form
-      className="mx-auto mt-3 mb-3 max-w-xl space-y-6 border
+      className="mx-auto mt-3 mb-3 max-w-xl space-y-3 border
      border-gray-300 p-8 rounded-md shadow-lg"
       onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">
@@ -25,8 +27,10 @@ const SignUp = () => {
           Create Account to get started
         </p>
       </div>
+      <label className="block my-2" htmlFor="fullName">
+        Full Name
+      </label>
       <div className="flex flex-col space-y-2 font-headingFont">
-        <label htmlFor="fullName">Full Name</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("fullName")}
@@ -36,8 +40,10 @@ const SignUp = () => {
           required
         />
       </div>
+      <label className="block my-2" htmlFor="email">
+        Email
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("email")}
@@ -47,29 +53,53 @@ const SignUp = () => {
           required
         />
       </div>
-      <div className="flex flex-col space-y-2">
-        <label htmlFor="password">Password</label>
+      <label className="block mb-2" htmlFor="password">
+        Password
+      </label>
+      <div className="relative">
         <Input
-          className="border p-2 rounded-md border-gray-300"
+          className="relative border p-2 rounded-md border-gray-300 w-full"
           {...register("password")}
+          placeholder={"***********"}
           name="password"
-          type="password"
+          type={togglePassword ? "password" : "text"}
           required
         />
+        <div
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5"
+          onClick={() => setTogglePassword((prev) => !prev)}>
+          {togglePassword ? (
+            <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          ) : (
+            <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          )}
+        </div>
       </div>
-      <div className="flex flex-col space-y-2">
-        <label htmlFor="confirmPassword">Confirm Password</label>
+      <label className="block mb-2" htmlFor="confirmPassword">
+        Confirm Password
+      </label>
+      <div className="relative">
         <Input
-          className="border p-2 rounded-md border-gray-300"
+          className=" relative border p-2 rounded-md border-gray-300 w-full"
           {...register("confirmPassword")}
+          placeholder={"***********"}
           name="confirmPassword"
-          type="password"
+          type={togglePassword ? "password" : "text"}
           required
         />
+        <div
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5"
+          onClick={() => setTogglePassword((prev) => !prev)}>
+          {togglePassword ? (
+            <FaEye className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          ) : (
+            <FaEyeSlash className="w-4 h-4 text-gray-600 dark:text-gray-500" />
+          )}
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <Button
-          className="w-full border border-gray-400 font-headingFont font-medium rounded-lg py-2"
+          className="w-full border border-gray-400 font-headingFont font-medium rounded-lg mt-4 py-2"
           variant="outline">
           Cancel{" "}
         </Button>

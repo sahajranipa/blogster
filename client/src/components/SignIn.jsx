@@ -14,7 +14,7 @@ const SignIn = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <form
-      className="mt-3 mb-3 mx-auto max-w-xl space-y-6 border
+      className="mt-3 mb-3 mx-auto max-w-xl space-y-3 border
  border-gray-300 p-8 rounded-md shadow-lg "
       onClick={handleSubmit(onSubmit)}>
       <div className="text-center">
@@ -24,8 +24,10 @@ const SignIn = () => {
         </p>
       </div>
 
+      <label className="block mb-2" htmlFor="email">
+        Email
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="email">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("email")}
@@ -35,23 +37,26 @@ const SignIn = () => {
           required
         />
       </div>
+      <label className="block mb-2" htmlFor="password">
+        Password
+      </label>
       <div className="flex flex-col space-y-2">
-        <label htmlFor="password">Password</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("password")}
+          placeholder={"***********"}
           name="password"
           type="password"
           required
         />
       </div>
-      <span className="mt-2 text-sm font-semibold text-black text-underline font-headingFont">
+      <span className="mt-3 text-sm font-semibold text-black text-underline font-headingFont">
         <Link to="/forgot-password">Forgot Password?</Link>
       </span>
 
       <div className="flex flex-col gap-2">
         <Button
-          className="w-full border border-gray-400 font-headingFont font-medium rounded-lg py-2"
+          className="w-full border border-gray-400 font-headingFont font-medium rounded-lg py-2 mt-4"
           variant="outline">
           Cancel{" "}
         </Button>

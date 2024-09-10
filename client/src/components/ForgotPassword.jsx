@@ -1,14 +1,16 @@
 import React from "react";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
+import { useForm } from "react-hook-form";
 
 const ForgotPassword = () => {
   const { handleSubmit, register } = useForm({
     defaultValues: { forgot_password: "" },
   });
+  const onSubmit = (data) => console.log(data);
   return (
     <form
-      className="mt-[7rem] mx-auto my-auto max-w-xl space-y-6 border
+      className="mt-[5rem] mx-auto my-auto max-w-xl space-y-3 border
      border-gray-300 p-8 rounded-md shadow-sm"
       onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">
@@ -16,8 +18,10 @@ const ForgotPassword = () => {
           Please Enter Your Email
         </p>
       </div>
+      <label className="block mb-2" htmlFor="forgot_password">
+        Email
+      </label>
       <div className="flex flex-col space-y-2 font-headingFont">
-        <label htmlFor="forgot_password">Email</label>
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("forgot_password")}
@@ -26,9 +30,11 @@ const ForgotPassword = () => {
           placeholder="Enter your email"
         />
       </div>
-      <Button className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
-        Send To Email
-      </Button>
+      <div className="mt-4">
+        <Button className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
+          Send To Email
+        </Button>
+      </div>
     </form>
   );
 };

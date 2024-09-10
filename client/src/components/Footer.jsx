@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-4 p-7 mx-auto w-full rounded-t-lg bg-black text-white">
+    <footer className="w-full bottom-0 p-7 rounded-t-lg text-center bg-black text-white">
       Blogster.
-    </div>
+    </footer>
   );
 };
 

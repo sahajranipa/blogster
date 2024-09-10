@@ -1,5 +1,5 @@
 const App = () => {
-  return <div>this is App</div>;
+  return <div className="flex">this is App</div>;
 };
 
 export default App;

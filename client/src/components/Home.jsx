@@ -34,6 +34,7 @@ const Home = () => {
             we've got something for everyone!
           </p>
         </div>
+
         <div className="flex flex-col space-y-3 w-[60%] mx-auto mt-5 bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
           <h2 className="font-headingFont text-pretty text-xl font-bold">
             Discover a World of Topics

@@ -25,10 +25,10 @@ const Header = () => {
           <Input
             className="border border-gray-200 px-5 py-3 w-[30rem] text-sm bg-white text-black dark:bg-black dark:text-white font-bodyFont rounded-full shadow-lg focus:ring-0"
             name="post_search_bar"
-            placeHolder="Search your posts..."
+            placeholder="Search your posts..."
           />
-          <Button className=" p-3 rounded-full bg-white text-white dark:bg-black dark:text-white shadow-lg">
-            <FiSearch size="25" />
+          <Button className="p-[0.7rem] rounded-full bg-white text-white dark:bg-black dark:text-white shadow-lg">
+            <FiSearch size="22" />
           </Button>
         </form>
         <div className="flex justify-center items-center gap-3">
