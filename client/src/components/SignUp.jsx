@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
@@ -46,11 +46,10 @@ const SignUp = () => {
           name="fullName"
           type="text"
           placeholder="John Doe"
-          required
         />
       </div>
       {errors?.fullName?.message && (
-        <p className="text-red-700 mb-4">{errors.fullName.message}</p>
+        <p className="text-red-700 text-sm mb-4">{errors.fullName.message}</p>
       )}
       <label className="block my-2" htmlFor="email">
         Email
@@ -62,11 +61,10 @@ const SignUp = () => {
           name="email"
           type="email"
           placeholder="johndoe@gmail.com"
-          required
         />
       </div>
       {errors?.email?.message && (
-        <p className="text-red-700 mb-4">{errors.email.message}</p>
+        <p className="text-red-700 text-sm mb-4">{errors.email.message}</p>
       )}
       <label className="block mb-2" htmlFor="password">
         Password
@@ -78,7 +76,6 @@ const SignUp = () => {
           placeholder={"***********"}
           name="password"
           type={togglePassword ? "password" : "text"}
-          required
         />
         <div
           className="absolute inset-y-0 end-0 flex items-center pe-3.5"
@@ -91,7 +88,7 @@ const SignUp = () => {
         </div>
       </div>
       {errors?.password?.message && (
-        <p className="text-red-700 mb-4">{errors.password.message}</p>
+        <p className="text-red-700 text-sm mb-4">{errors.password.message}</p>
       )}
       <label className="block mb-2" htmlFor="confirmPassword">
         Confirm Password
@@ -103,7 +100,6 @@ const SignUp = () => {
           placeholder={"***********"}
           name="confirmPassword"
           type={toggleConfirmPassword ? "password" : "text"}
-          required
         />
         <div
           className="absolute inset-y-0 end-0 flex items-center pe-3.5"
@@ -116,7 +112,9 @@ const SignUp = () => {
         </div>
       </div>
       {errors?.confirmPassword?.message && (
-        <p className="text-red-700 mb-4">{errors.confirmPassword.message}</p>
+        <p className="text-red-700 text-sm mb-4">
+          {errors.confirmPassword.message}
+        </p>
       )}
       <div className="flex flex-col gap-2">
         <Button

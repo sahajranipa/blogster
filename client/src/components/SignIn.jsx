@@ -4,21 +4,29 @@ import Button from "./ui/Button";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { SignInSchema } from "../schemas/signInSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const SignIn = () => {
   const [togglePassword, setTogglePassword] = useState(false);
-  const { handleSubmit, register } = useForm({
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+  } = useForm({
     defaultValues: {
       email: "",
       password: "",
     },
+    resolver: zodResolver(SignInSchema),
   });
   const onSubmit = (data) => console.log(data);
   return (
     <form
       className="mt-3 mb-3 mx-auto max-w-xl space-y-3 border
  border-gray-300 p-8 rounded-md shadow-lg "
-      onClick={handleSubmit(onSubmit)}>
+      onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">
         <h1 className="text-4xl font-bold my-1 font-headingFont">Sign In</h1>
         <p className="text-gray-500 text-xl text-center font-headingFont">
@@ -29,16 +37,18 @@ const SignIn = () => {
       <label className="block mb-2" htmlFor="email">
         Email
       </label>
-      <div className="relative">
+      <div className="flex flex-col space-y-2">
         <Input
           className="border p-2 rounded-md border-gray-300"
           {...register("email")}
           name="email"
           type="email"
           placeholder="johndoe@gmail.com"
-          required
         />
       </div>
+      {errors?.email?.message && (
+        <p className="text-red-700 text-sm mb-4">{errors.email.message}</p>
+      )}
       <label className="block mb-2" htmlFor="password">
         Password
       </label>
@@ -49,7 +59,6 @@ const SignIn = () => {
           placeholder={"***********"}
           name="password"
           type={togglePassword ? "password" : "text"}
-          required
         />
         <div
           className="absolute inset-y-0 end-0 flex items-center pe-3.5"
@@ -61,6 +70,9 @@ const SignIn = () => {
           )}
         </div>
       </div>
+      {errors?.password?.message && (
+        <p className="text-red-700 text-sm mb-4">{errors.password.message}</p>
+      )}
       <span className="mt-3 text-sm font-semibold text-black text-underline font-headingFont">
         <Link to="/forgot-password">Forgot Password?</Link>
       </span>

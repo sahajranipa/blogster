@@ -2,10 +2,18 @@ import React from "react";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { useForm } from "react-hook-form";
+import { ForgotPasswordSchema } from "../schemas/forgotPasswordSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const ForgotPassword = () => {
-  const { handleSubmit, register } = useForm({
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+  } = useForm({
     defaultValues: { forgot_password: "" },
+    resolver: zodResolver(ForgotPasswordSchema),
   });
   const onSubmit = (data) => console.log(data);
   return (
@@ -30,6 +38,11 @@ const ForgotPassword = () => {
           placeholder="Enter your email"
         />
       </div>
+      {errors?.forgot_password?.message && (
+        <p className="text-red-700 text-sm mb-4">
+          {errors.forgot_password.message}
+        </p>
+      )}
       <div className="mt-4">
         <Button className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
           Send To Email

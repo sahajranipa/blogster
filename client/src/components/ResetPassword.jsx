@@ -3,15 +3,23 @@ import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ResetPasswordSchema } from "../schemas/resetPasswordSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const ResetPassword = () => {
   const [togglePassword, setTogglePassword] = useState(false);
   const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
-  const { handleSubmit, register } = useForm({
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+  } = useForm({
     defaultValues: {
       password: "",
       confirm_password: "",
     },
+    resolver: zodResolver(ResetPasswordSchema),
   });
   const onSubmit = (data) => console.log(data);
   return (
@@ -33,7 +41,9 @@ const ResetPassword = () => {
           type={togglePassword ? "password" : "text"}
           placeholder="Enter your password"
         />
-
+        {errors?.password?.message && (
+          <p className="text-red-700 text-sm mb-4">{errors.password.message}</p>
+        )}
         <div
           className="absolute inset-y-0 end-0 flex items-center pe-3.5"
           onClick={() => setTogglePassword((prev) => !prev)}>
@@ -65,6 +75,11 @@ const ResetPassword = () => {
           )}
         </div>
       </div>
+      {errors?.confirm_password?.message && (
+        <p className="text-red-700 text-sm mb-4">
+          {errors.confirm_password.message}
+        </p>
+      )}
       <div className="mt-4">
         <Button className="w-full bg-black text-white font-headingFont font-medium rounded-lg py-2">
           Reset Password
