@@ -1,0 +1,31 @@
+{
+  "name": "blogster",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "start": "node api/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahajranipa/blogster.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahajranipa/mern-blog/issues"
+  },
+  "homepage": "https://github.com/sahajranipa/mern-blog#readme",
+  "dependencies": {
+    "cookieparser": "^0.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.2",
+    "tailwindcss": "^3.4.3"
+  }
+}
