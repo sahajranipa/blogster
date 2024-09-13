@@ -5,7 +5,7 @@ import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { SignUpSchema } from "../schemas/signUpSchema";
+import { SignUpSchema } from "../schemas/SignUpSchema";
 
 const SignUp = () => {
   const [togglePassword, setTogglePassword] = useState(false);
