@@ -33,6 +33,20 @@ const userSchema = new Schema(
         message: "Passwords do not match",
       },
     },
+    savedPosts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Post",
+      },
+    ],
+    profileImage: {
+      type: String,
+      default: "",
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
     refreshToken: {
       type: String,
     },
@@ -42,4 +56,5 @@ const userSchema = new Schema(
   }
 );
 
-export const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+export default User;
