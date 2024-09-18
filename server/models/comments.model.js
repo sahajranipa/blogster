@@ -7,12 +7,12 @@ const commentSchema = new Schema(
       required: true,
     },
     postId: {
-      type: String,
-      required: true,
+      type: Schema.Types.ObjectId,
+      ref: "Post",
     },
     userId: {
-      type: String,
-      required: true,
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
     likes: {
       type: Array,

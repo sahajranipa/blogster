@@ -26,6 +26,7 @@ const postSchema = new Schema(
       required: true,
       unique: true,
     },
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     commentsCount: {
       type: Number,
       default: 0,
@@ -33,6 +34,10 @@ const postSchema = new Schema(
     likesCount: {
       type: Number,
       default: 0,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
     },
   },
   { timestamps: true }
