@@ -5,7 +5,7 @@ import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { SignUpSchema } from "../schemas/SignUpSchema";
+import { SignUpSchema } from "../schemas/signUpSchema";
 
 const SignUp = () => {
   const [togglePassword, setTogglePassword] = useState(false);
@@ -27,7 +27,7 @@ const SignUp = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <form
-      className="mx-auto mt-3 mb-3 max-w-xl space-y-3 border
+      className="m-auto md:mx-auto mt-3 mb-3 w-full lg:max-w-xl sm:p-8 space-y-3 border
      border-gray-300 p-8 rounded-md shadow-lg"
       onSubmit={handleSubmit(onSubmit)}>
       <div className="text-center">

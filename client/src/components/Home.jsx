@@ -8,8 +8,8 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="font-headingFont text-center mt-[7%] mb-3 min-h-screen">
-      <h1 className="font-bold text-center text-9xl">Blogster.</h1>
-      <p className=" text-3xl text-balance leading-[3rem] mt-8 w-3/4 mx-auto">
+      <h1 className="font-bold text-center text-7xl md:text-9xl">Blogster.</h1>
+      <p className="text-xl md:text-3xl text-center md:text-balance leading-[3rem] mt-8 w-full md:w-3/4 mx-auto">
         Your one and only platform for blogging.Where you will create your
         gradient for knowledge.Which will lead you to the milestones🚩
       </p>
@@ -19,7 +19,7 @@ const Home = () => {
         onClick={() => navigate("/sign-up")}>
         Start Your Journey <BsArrowRight className="inline w-7 h-7" />
       </Button>
-      <div className="flex flex-col w-[60%] space-y-3 mx-auto mt-5 border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+      <div className="flex flex-col w-full md:w-[60%] space-y-3 mx-auto mt-5 border border-gray-300 rounded-xl p-7 shadow-xl text-left">
         <h2 className="font-headingFont text-pretty text-xl font-bold">
           Welcome to Blogster! Your Hub for Fresh, Engaging, and Insightful
           Content
@@ -34,7 +34,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="flex flex-col space-y-3 w-[60%] mx-auto mt-5 bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+      <div className="flex flex-col space-y-3 w-full md:w-[60%] mx-auto mt-5 bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
         <h2 className="font-headingFont text-pretty text-xl font-bold">
           Discover a World of Topics
         </h2>
@@ -47,7 +47,7 @@ const Home = () => {
           articles and discover stories that resonate with you.
         </p>
       </div>
-      <div className="flex flex-col space-y-3 w-[60%] mx-auto mt-5 border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+      <div className="flex flex-col space-y-3 w-full md:w-[60%] mx-auto mt-5 border border-gray-300 rounded-xl p-7 shadow-xl text-left">
         <h2 className="font-headingFont text-pretty text-xl font-bold">
           Write, Share, and Inspire
         </h2>
@@ -61,7 +61,7 @@ const Home = () => {
           unique voice.
         </p>
       </div>
-      <div className="flex w-[60%] flex-col gap-3 mx-auto">
+      <div className="flex w-full md:w-[60%] flex-col gap-3 mx-auto">
         <div className="flex flex-col space-y-3  mx-auto mt-5 bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
           <h2 className="font-headingFont  text-xl font-bold">
             Join Our Community
@@ -86,7 +86,7 @@ const Home = () => {
             blog is a story worth telling.
           </p>
         </div>
-        <div className="flex flex-col space-y-3  mx-auto  bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
+        <div className="flex items-center flex-col space-y-3  mx-auto  bg-black text-white border border-gray-300 rounded-xl p-7 shadow-xl text-left">
           <h2 className="font-headingFont  text-xl font-bold">Stay Updated</h2>
           <p className="font-bodyFont text-pretty">
             {" "}
@@ -95,7 +95,7 @@ const Home = () => {
             social media to stay updated with trending topics, featured writers,
             and more.
           </p>
-          <div className="text-center space-y-4">
+          <div className="flex md:text-center md:space-y-4">
             <Input
               className="rounded-lg px-3 py-1.5 mr-2 w-[21rem] text-black"
               type="email"
