@@ -1,0 +1,59 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import Image from "./ui/Image";
+
+const NavDropDown = () => {
+  return (
+    <div
+      id="dropdownAvatar"
+      class="md:hidden absolute translate-x-[65%] translate-y-[70%] z-10 w-[60%] bg-white rounded-lg shadow  dark:bg-gray-700 dark:divide-gray-600">
+      <div class="flex items-center gap-2 px-4 py-3 text-sm text-gray-900 dark:text-white">
+        <Image
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+          className=" relative rounded-full w-10 h-10 object-cover"
+          alt="profile pic"
+        />
+
+        <div>
+          <div>Bonnie Green</div>
+          <div class="font-medium truncate">name@flowbite.com</div>
+        </div>
+      </div>
+      <ul
+        class="px-auto text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownUserAvatarButton">
+        <li>
+          <Link
+            href="#"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            My Profile
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            My Blog Posts
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            My Saved Posts
+          </Link>
+        </li>
+      </ul>
+      <hr className="mt-2" />
+      <div class="py-2">
+        <Link
+          href="#"
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+          Sign out
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default NavDropDown;

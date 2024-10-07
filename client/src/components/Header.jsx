@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineClose } from "react-icons/md";
 import Button from "../components/ui/Button";
 import ProfilePicDropDown from "./ProfilePicDropDown";
 import Image from "./ui/Image";
 import Input from "./ui/Input";
+import NavDropDown from "./NavDropDown";
 
 const Header = () => {
   const [toggleDropDown, setToggleDropDown] = useState(false);
@@ -17,17 +19,26 @@ const Header = () => {
     <header
       className="sticky top-0 left-0 mx-auto max-w-screen-xl z-50 mt-2 md:mx-auto bg-gray-300  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10
  px-4 py-2 rounded-full shadow-xl">
-      <div className="flex justify-between items-center py-3 px-3">
+      <div className="flex relative justify-between items-center py-3 px-3">
         <div>
           <Link to="/">
             <h2 className="text-3xl font-headingFont font-bold">Blogster.</h2>
           </Link>
         </div>
-        <GiHamburgerMenu
-          className="block md:hidden"
-          onClick={() => setToggle((prev) => !prev)}
-          data-collapse-toggle="navbar-default"
-        />
+        {toggle ? (
+          <MdOutlineClose
+            className="block md:hidden"
+            size="25"
+            onClick={() => setToggle(false)}
+          />
+        ) : (
+          <GiHamburgerMenu
+            className="block md:hidden"
+            onClick={() => setToggle(true)}
+            data-collapse-toggle="navbar-default"
+          />
+        )}
+        {toggle && <NavDropDown />}
         <div
           className="hidden md:flex md:justify-center md:items-center md:gap-3"
           id="navbar-default">

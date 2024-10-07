@@ -95,7 +95,7 @@ const Home = () => {
             social media to stay updated with trending topics, featured writers,
             and more.
           </p>
-          <div className="flex md:text-center md:space-y-4">
+          <div className="flex md:text-center">
             <Input
               className="rounded-lg px-3 py-1.5 mr-2 w-[21rem] text-black"
               type="email"
