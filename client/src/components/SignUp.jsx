@@ -23,6 +23,7 @@ const SignUp = () => {
       confirmPassword: "",
     },
     resolver: zodResolver(SignUpSchema),
+    mode: "onChange",
   });
   const onSubmit = (data) => console.log(data);
   return (

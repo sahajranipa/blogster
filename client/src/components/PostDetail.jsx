@@ -32,16 +32,16 @@ const PostDetail = () => {
             18 min read
           </span>
         </div>
-        <h1 className="text-[4rem] text-center font-headingFont font-[400]">
+        <h1 className="text-4xl md:text-[4rem] text-center font-headingFont font-[400]">
           Best stategy to Achieve Profitable Harvesting
         </h1>
         <p className="text-center w-full text-md font-bodyFont">{post?.body}</p>
         <Image
           src="https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="orange farm"
-          className="rounded-lg w-[60%] h-[70%] object-cover"
+          className="rounded-lg w-full md:w-[60%] h-[70%] object-cover"
         />
-        <p className=" text-pretty text-md font-bodyFont leading-8">
+        <p className="text-balance text-lg md:text-pretty text-md font-bodyFont leading-8">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
           et, dolor laboriosam eius, sequi omnis maxime assumenda fugiat alias
           veniam ea laudantium sapiente natus placeat qui aperiam ipsum,
@@ -67,7 +67,7 @@ const PostDetail = () => {
           Related Blogs
         </h2>
         <hr className="h-px my-1 w-full bg-gray-400 border-0 dark:bg-gray-400" />
-        <div className="grid grid-cols-4 justify-center items-center gap-2 space-y-2">
+        <div className="flex flex-col md:grid md:grid-cols-4 justify-center items-center gap-2 space-y-2">
           <RelatedBlogsContainer />
           <RelatedBlogsContainer />
           <RelatedBlogsContainer />

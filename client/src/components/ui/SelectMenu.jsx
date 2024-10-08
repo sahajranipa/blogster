@@ -1,6 +1,6 @@
 const SelectMenu = ({ menuItems }) => {
   return (
-    <form className="mt-6">
+    <form className="md:mt-6">
       <label
         for="select_blog_category"
         class="block mb-6 text-base font-medium font-headingFont text-gray-900 dark:text-white">

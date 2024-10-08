@@ -4,19 +4,19 @@ import DropDown from "./ui/DropDown";
 const TopBlogsContainer = () => {
   return (
     <>
-      <h1 className="text-4xl font-headingFont flex justify-between text-start font-semibold relative">
+      <h1 className="text-2xl md:text-4xl mt-4 font-headingFont flex justify-between text-start font-semibold relative">
         Top Blogs
         <div className="relative right-0">
           <DropDown />
         </div>
       </h1>
 
-      <div className="grid grid-cols-2 col-span-2 justify-center gap-4 w-full mx-auto mt-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 justify-center gap-y-2 md:gap-4 w-full mx-auto md:mt-6 md:mb-6">
         <div>
           <Image
             src="https://images.unsplash.com/photo-1555465910-31f7f20a184d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
             alt="greenary"
-            className="rounded-xl object-cover w-[50%]"
+            className="rounded-xl object-cover w-full md:w-[50%]"
           />
           <div>
             <div className="flex flex-col flex-grow justify-start space-y-2">
@@ -42,12 +42,12 @@ const TopBlogsContainer = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-rows-2 gap-4">
-          <div className="flex flex-row justify-start items-center gap-3">
+        <div className="flex flex-row space-x-5 mt-5 md:mt-0 md:space-x-0 md:grid md:grid-rows-2 md:gap-4">
+          <div className="flex flex-col md:flex-row justify-start items-center md:gap-3">
             <Image
               src="https://images.unsplash.com/photo-1555465910-31f7f20a184d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
               alt="greenary"
-              className="rounded-xl object-cover w-[30%] aspect-square"
+              className="rounded-xl object-cover w-full md:w-[30%] aspect-square"
             />
             <div>
               <div className="flex flex-col justify-start space-y-3">
@@ -76,14 +76,14 @@ const TopBlogsContainer = () => {
             </div>
           </div>
 
-          <div className="flex flex-row justify-start items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-start items-center md:gap-3">
             <Image
               src="https://images.unsplash.com/photo-1555465910-31f7f20a184d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
               alt="greenary"
-              className="rounded-xl object-cover w-[30%] aspect-square"
+              className="rounded-xl object-cover w-full md:w-[30%] aspect-square"
             />
             <div>
-              <div className="flex flex-col justify-start space-y-3">
+              <div className="flex flex-col justify-start md:space-y-3">
                 <div className="text-sm text-gray-700">10 min</div>
                 <h2 className="text-2xl font-semibold text-gray-950">
                   Tech Marvels for Your Home
