@@ -13,8 +13,14 @@ export const SignUpSchema = z.object({
   email: z.string().email("Invalid Email.Your email must be a valid email."),
   password: z
     .string()
-    .min(4, "Your password should not be less than 4 characters.")
-    .max(20, "Your password should not be 20 characters long."),
+    .min(8, "Password must be at least 8 characters")
+    .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+    .regex(/[0-9]/, "Password must contain at least one number")
+    .regex(
+      /[^A-Za-z0-9]/,
+      "Password must contain at least one special character"
+    ),
   confirmPassword: z
     .string()
     .refine((data) => data.password === data.confirmPassword, {

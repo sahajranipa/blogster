@@ -49,7 +49,7 @@ const SignUp = () => {
           placeholder="John Doe"
         />
       </div>
-      {errors?.fullName?.message && (
+      {errors?.fullName && (
         <p className="text-red-700 text-sm mb-4">{errors.fullName.message}</p>
       )}
       <label className="block my-2" htmlFor="email">
@@ -64,7 +64,7 @@ const SignUp = () => {
           placeholder="johndoe@gmail.com"
         />
       </div>
-      {errors?.email?.message && (
+      {errors?.email && (
         <p className="text-red-700 text-sm mb-4">{errors.email.message}</p>
       )}
       <label className="block mb-2" htmlFor="password">
@@ -88,7 +88,7 @@ const SignUp = () => {
           )}
         </div>
       </div>
-      {errors?.password?.message && (
+      {errors?.password && (
         <p className="text-red-700 text-sm mb-4">{errors.password.message}</p>
       )}
       <label className="block mb-2" htmlFor="confirmPassword">
@@ -112,7 +112,7 @@ const SignUp = () => {
           )}
         </div>
       </div>
-      {errors?.confirmPassword?.message && (
+      {errors?.confirmPassword && (
         <p className="text-red-700 text-sm mb-4">
           {errors.confirmPassword.message}
         </p>
