@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ArticleFloatingButton from "./ui/ArticleFloatingButton";
 import RelatedBlogsContainer from "./RelatedBlogsContainer";
 import { useParams } from "react-router-dom";
 import Image from "./ui/Image";
@@ -62,6 +63,7 @@ const PostDetail = () => {
           deleniti consequuntur nulla?
         </p>
       </div>
+      <ArticleFloatingButton />
       <div className="flex flex-col justify-start space-y-6">
         <h2 className="text-3xl text-start font-headingFont font-semibold">
           Related Blogs
