@@ -44,7 +44,7 @@ const Header = () => {
           id="navbar-default">
           <form className="flex justify-center items-center gap-2">
             <Input
-              className="border border-gray-200 px-5 py-3 w-[30rem] text-sm bg-white text-black dark:bg-black dark:text-white font-bodyFont rounded-full shadow-lg focus:ring-0"
+              className="px-5 py-3 w-[30rem] text-sm bg-white text-black dark:bg-black dark:text-white font-bodyFont rounded-full shadow-lg focus:ring-0"
               name="post_search_bar"
               placeholder="Search your posts..."
             />
